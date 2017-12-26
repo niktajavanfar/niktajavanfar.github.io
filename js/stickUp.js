@@ -78,12 +78,12 @@ function($) {
 						if(varscroll > testView){
 							$('.'+itemClass).removeClass(itemHover);
 							$('.'+itemClass+':eq('+i+')').addClass(itemHover);
-						} else if(varscroll < 100){
+						} else if(varscroll < 50){
 							$('.'+itemClass).removeClass(itemHover);
 							$('.'+itemClass+':eq(0)').addClass(itemHover);
 						}
 					}
-					if(scrollDir == 'down' && varscroll > contentTop[i]-100 && varscroll < contentTop[i]+100) {
+					if(scrollDir == 'down' && varscroll > contentTop[i]-50 && varscroll < contentTop[i]+50) {
 						$('.'+itemClass).removeClass(itemHover);
 						$('.'+itemClass+':eq('+i+')').addClass(itemHover);
 					}
@@ -96,7 +96,6 @@ function($) {
 
 
 			if(vartop < varscroll + topMargin){
-				$('.wrapper').addClass('spHeight');
 				$('.stuckMenu').addClass('isStuck');
 				$('.stuckMenu').next().closest('div').css({
 					'margin-top': stickyHeight + stickyMarginB + currentMarginT + 'px'
@@ -110,7 +109,6 @@ function($) {
 			};
 
 			if(varscroll + topMargin < vartop){
-				$('.wrapper').removeClass('spHeight');
 				$('.stuckMenu').removeClass('isStuck');
 				$('.stuckMenu').next().closest('div').css({
 					'margin-top': currentMarginT + 'px'
